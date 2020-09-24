@@ -73,12 +73,12 @@ public class FilePathToolbar extends Composite
          if (!cloudFolderEnabled_)
             return super.parseDir(dirPath);
 
-         // if path starts with /cloud, eliminate the entry for the root folder; enables
-         // display of "/cloud" as a single breadcrumb, similar to how "Home" is displayed
+         // if path starts with /WholeTale, eliminate the entry for the root folder; enables
+         // display of "/WholeTale" as a single breadcrumb, similar to how "Home" is displayed
          ArrayList<FileSystemItem> parsedDir = new ArrayList<>(Arrays.asList(super.parseDir(dirPath)));
          if (parsedDir.size() >= 2)
          {
-            if (StringUtil.equals(parsedDir.get(1).getPath(), "/cloud"))
+            if (StringUtil.equals(parsedDir.get(1).getPath(), "/WholeTale"))
             {
                parsedDir.remove(0);
             }
@@ -90,7 +90,7 @@ public class FilePathToolbar extends Composite
       public boolean isCloudRoot(FileSystemItem item)
       {
          if (cloudFolderEnabled_)
-            return item.isDirectory() && item.getPath().equals("/cloud");
+            return item.isDirectory() && item.getPath().equals("/WholeTale");
          else
             return false;
       }
@@ -99,7 +99,7 @@ public class FilePathToolbar extends Composite
    /**
     *
     * @param navigationObserver
-    * @param cloudFolderEnabled if true, display /cloud folder in similar fashion to Home
+    * @param cloudFolderEnabled if true, display /WholeTale folder in similar fashion to Home
     */
    public FilePathToolbar(Files.Display.NavigationObserver navigationObserver, boolean cloudFolderEnabled)
    {

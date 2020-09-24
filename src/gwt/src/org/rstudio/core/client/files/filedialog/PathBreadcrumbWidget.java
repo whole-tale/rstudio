@@ -223,7 +223,7 @@ public class PathBreadcrumbWidget
       if (isHome)
          text = "Home";
       else if (isCloudRoot)
-         text = "Cloud";
+         text = "WholeTale";
       else
          text = item.getName();
       Widget link = null;
