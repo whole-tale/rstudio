@@ -293,8 +293,7 @@ public class FilesPane extends WorkbenchPane implements Files.Display
    @Override 
    protected Widget createMainWidget()
    {
-      filePathToolbar_ = new FilePathToolbar(new DisplayObserverProxy(),
-            session_.getSessionInfo().getCloudFolderEnabled());
+      filePathToolbar_ = new FilePathToolbar(new DisplayObserverProxy(), true);
 
       // create file list and file progress
       filesList_ = new FilesList(new DisplayObserverProxy(), fileTypeRegistry_);
